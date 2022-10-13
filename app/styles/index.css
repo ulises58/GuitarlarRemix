@@ -116,13 +116,11 @@
     .footer .navegacion a,
     .footer .coopyright{
       color: var(--white);
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       text-decoration: none;
       font-weight: 700;
     }
 
     .footer .coopyright{
       text-align: center;
-      font-size: 2.2rem;
     }
-
