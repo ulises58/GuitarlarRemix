@@ -3,6 +3,12 @@ import { getGuitarra } from "~/models/guitarras.server";
 import styles from "~/styles/guitarras.css";
 
 export function meta({ data }) {
+  if (data) {
+    return {
+      title: `GuitarraLA - Guitarra no encontrada`,
+      descripcion: `Guitarras, venta de guitarras, guitarra no encontrada`,
+    };
+  }
   return {
     title: `GuitarraLA -${data.data[0].attributes.nombre}`,
     descripcion: `Guitarras, venta de guitarras, guitarra ${data.data[0].attributes.nombre}`,
@@ -20,8 +26,16 @@ export function links() {
 export async function loader({ params }) {
   const { guitarraUrl } = params;
   const guitarra = await getGuitarra(guitarraUrl);
+  if (guitarra.data.length === 0) {
+    throw new Response("", {
+      status: 404,
+      statusText: "Guitarra no encontrada",
+    });
+  }
+
   return guitarra;
 }
+
 const GuitarraUrl = () => {
   const guitarra = useLoaderData();
   const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
