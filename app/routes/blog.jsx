@@ -1,5 +1,25 @@
+import { getPosts } from "~/models/posts.server";
+import { useLoaderData } from "@remix-run/react";
+import Post from "~/components/post";
+
+export async function loader() {
+  const posts = await getPosts();
+  console.log(posts);
+  return posts.data;
+}
+
 const Blog = () => {
-  return <div>Blog</div>;
+  const posts = useLoaderData();
+  return (
+    <div className="contenedor">
+      <h2 className="heading">Blog </h2>
+      <div className="blog">
+        {posts.map((post) => (
+          <Post post={post.attributes} key={post.id} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Blog;
