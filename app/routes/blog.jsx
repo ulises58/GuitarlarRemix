@@ -12,6 +12,13 @@ export function links() {
   ];
 }
 
+export function meta() {
+  return {
+    title: "GuitarLA - Nuesto Blog",
+    description: "GuitarLA, Blog de musica y venta de guitarras",
+  };
+}
+
 export async function loader() {
   const posts = await getPosts();
   console.log(posts);

@@ -3,7 +3,7 @@ import styles from "../styles/nosotros.css";
 
 export function meta() {
   return {
-    title: "GuitarLa - Nosotos",
+    title: "GuitarLA - Nosotos",
   };
 }
 

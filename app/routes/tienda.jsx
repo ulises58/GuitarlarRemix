@@ -5,7 +5,7 @@ import styles from "~/styles/guitarras.css";
 
 export function meta() {
   return {
-    title: "GuitarraLA - Tienda de Guitarras",
+    title: "GuitarLA - Tienda de Guitarras",
     description: "GuitarraLA - Nuestra coleccion de guitarras",
   };
 }

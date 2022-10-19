@@ -3,14 +3,14 @@ import { getGuitarra } from "~/models/guitarras.server";
 import styles from "~/styles/guitarras.css";
 
 export function meta({ data }) {
-  if (data) {
+  if (!data) {
     return {
       title: `GuitarraLA - Guitarra no encontrada`,
       descripcion: `Guitarras, venta de guitarras, guitarra no encontrada`,
     };
   }
   return {
-    title: `GuitarraLA -${data.data[0].attributes.nombre}`,
+    title: `GuitarraLA - ${data.data[0].attributes.nombre}`,
     descripcion: `Guitarras, venta de guitarras, guitarra ${data.data[0].attributes.nombre}`,
   };
 }
