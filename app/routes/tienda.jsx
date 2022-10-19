@@ -3,6 +3,13 @@ import { getGuitarras } from "~/models/guitarras.server";
 import { useLoaderData } from "@remix-run/react";
 import styles from "~/styles/guitarras.css";
 
+export function meta() {
+  return {
+    title: "GuitarraLA - Tienda de Guitarras",
+    description: "GuitarraLA - Nuestra coleccion de guitarras",
+  };
+}
+
 export function links() {
   return [
     {
