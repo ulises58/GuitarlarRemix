@@ -42,7 +42,7 @@ const Post = () => {
   const post = useLoaderData();
   const { titulo, contenido, imagen, publishedAt } = post?.data[0]?.attributes;
   return (
-    <article className="contenedor post mt-3">
+    <article className="post mt-3">
       <img
         className="imagen"
         src={imagen?.data?.attributes?.url}
